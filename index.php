@@ -1,3 +1,8 @@
+<?php
+
+    session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 	<head>
@@ -27,15 +32,15 @@
 						</ul>
 						<div class="tab-content" id="pills-tabContent">
 							<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-								<!-- Register form -->
-								<form action="" method="POST" class="authorizate needs-validation">
+								<!-- Authorizate form -->
+								<form action="auth.php" method="POST" class="authorizate">
 									<div class="form-group">
 										<label>Введите логин:</label>
 										<div class="input-group">
 											<div class="input-group-prepend">
          								 		<div class="input-group-text"><i class="fas fa-user"></i></div>
         									</div>
-											<input type="text" name="login" class="form-control" aria-describedby="emailHelp" required>
+											<input value="qqqqqqqqqqq" type="text" name="login" class="form-control" aria-describedby="emailHelp" required>
 										</div>
 									</div>
 									<div class="form-group">
@@ -44,24 +49,24 @@
 											<div class="input-group-prepend">
          								 		<div class="input-group-text"><i class="fas fa-key"></i></div>
         									</div>
-											<input type="password" name="password" class="form-control" aria-describedby="emailHelp" required>
+											<input value="qqqqqqqqqqq" type="password" name="password" class="form-control" aria-describedby="emailHelp" required>
 										</div>
 									</div>
 									<div class="mybtn">
-										<button type="submit" class="btn btn-outline-primary btn-lg">Войти в аккаунт</button>
+										<button style="vertical-align: middle;" type="submit" class="btn btn-outline-primary btn-lg btn-auth">Войти в аккаунт</button>
 									</div>
 								</form>
 							</div>
 							<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
 								<!-- Register form -->
-								<form action="" method="POST" class="register needs-validation">
+								<form action="register.php" method="POST" class="register needs-validation">
 									<div class="form-group">
 										<label>Введите псевдоним:</label>
 										<div class="input-group">
 											<div class="input-group-prepend">
          								 		<div class="input-group-text"><i class="fas fa-signature"></i></div>
         									</div>
-											<input type="text" name="nickname" class="form-control" aria-describedby="emailHelp" required>
+											<input value="asdfasdfsfsdfd" type="text" name="nickname" class="form-control" aria-describedby="emailHelp" required>
 										</div>
 									</div>
 									<div class="form-group">
@@ -70,7 +75,7 @@
 											<div class="input-group-prepend">
          								 		<div class="input-group-text"><i class="fas fa-user"></i></div>
         									</div>
-											<input type="text" name="login" class="form-control" aria-describedby="emailHelp">
+											<input value="asdfasdfsfsdfd" type="text" name="login" class="form-control" aria-describedby="emailHelp">
 											<div class="valid-feedback valid-login">
 									        	Looks good!
 									      	</div>
@@ -85,7 +90,7 @@
 											<div class="input-group-prepend">
          								 		<div class="input-group-text"><i class="fas fa-key"></i></div>
         									</div>
-											<input type="password" name="password" class="form-control" aria-describedby="emailHelp">
+											<input value="asdfasdfsfsdfd" type="password" name="password" class="form-control" aria-describedby="emailHelp">
 											<div class="valid-feedback valid-pass">
 									        	Looks good!
 									      	</div>
@@ -95,7 +100,7 @@
 										</div>
 									</div>
 									<div class="mybtn">
-										<button type="submit" class="btn btn-outline-primary btn-lg">Зарегистрироваться</button>
+										<button type="submit" class="btn btn-outline-primary btn-lg btn-register">Зарегистрироваться</button>
 									</div>
 								</form>
 							</div>
@@ -106,8 +111,16 @@
 		</div>
 	</section>
 
-	<section class="content">
+    <?php if ($_SESSION['login'] == '') { ?>
+    <div class="container">
+        <h3 style="margin-bottom: 25px;">Видно авторизованным <span class="badge badge-secondary"><i class="fas fa-eye-slash"></i></span></h3>
+    </div>
+	<section class="content" style="pointer-events: none; opacity: 0.09;">
+    <?php } else { ?>
+    <section class="content">
+    <?php } ?>
 		<div class="container">
+            <h3 style="margin-bottom: 25px;">Темы форума <span class="badge badge-secondary"><i class="fas fa-star"></i></span></h3>
 			<nav class="navbar navbar-expand-lg navbar-light bg-dark" style="margin-bottom: 7px; border-radius: 7px;">
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<button class="btn btn-primary my-2 my-sm-2 mr-auto" type="submit">Создать тему <i style="margin-left: 10px;" class="fas fa-folder-plus"></i></button>
@@ -150,19 +163,19 @@
 			</table>
 		</div>
 	</section>
-
 	</body>
 
 
 	<!-- FontAwesome -->
 	<script src="https://kit.fontawesome.com/ca76ee2803.js" crossorigin="anonymous"></script>
+    <!-- Jquery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<!-- Bootstrap -->
-	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> -->
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 	<!-- Handler -->
 	<script src="js/formValidation.js"></script>
 	<script type="text/javascript" src="js/handler.js"></script>
-
 
 </html>
