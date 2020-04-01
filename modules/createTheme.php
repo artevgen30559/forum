@@ -8,8 +8,8 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute(['login' => $_SESSION['login']]);
 $id_author = $stmt->fetchColumn();
 
-$title = $_GET['title'];
-$body = $_GET['body'];
+$title = $_POST['title'];
+$body = $_POST['body'];
 $date = date('Y-m-d H:i:s'); // Format 2020-04-01 09:34:29
 
 // Create theme

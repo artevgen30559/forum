@@ -132,7 +132,7 @@
 				</div>
 			</nav>
             <!-- Create theme form -->
-            <form class="create-theme-form" action="/modules/createTheme.php" method="GET" style="display: none;">
+            <form class="create-theme-form" action="/modules/createTheme.php" method="POST" style="display: none;">
                 <div class="row justify-content-center">
                     <div class="col-10">
                         <div class="form-group">
