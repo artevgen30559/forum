@@ -1,6 +1,6 @@
 <?php
-
     session_start();
+    include('modules/themeList.php');
 
 ?>
 <!DOCTYPE html>
@@ -91,6 +91,7 @@
          								 		<div class="input-group-text"><i class="fas fa-key"></i></div>
         									</div>
 											<input value="asdfasdfsfsdfd" type="password" name="password" class="form-control" aria-describedby="emailHelp">
+                                            <small id="emailHelp" class="form-text text-muted">Если логин УЖЕ существует и пароль верен, то вы авторизуетесь</small>
 											<div class="valid-feedback valid-pass">
 									        	Looks good!
 									      	</div>
@@ -159,35 +160,33 @@
                     </div>
                 </div>
             </form>
+
+
 			<table class="table table-bordered table-striped table-borderless table-dark theme-list" style="border-radius: 7px;">
 				<thead>
 					<tr class="table-head">
 						<th scope="col">Название темы</th>
-						<th scope="col">Создатель</th>
-						<th scope="col">Кол-во ответов</th>
+						<th scope="col">Автор</th>
+						<th scope="col">Дата создания</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr data-href="example.com">
-						<td>Название темы длинное</td>
-						<td>Пользователь: artevgen</td>
-						<td>Ответов в теме: 30</td>
+                    <?php foreach($themes as $theme) {?>
+					<tr data-href="<?php echo '/themepage.php' . '?title=' . $theme['title'] . '&author=' . $theme['id_author'];?>">
+						<td class="theme-title"><?php echo $theme['title'];?></td>
+						<td>
+                            <div class="profile-info">
+                                <span class="user-name"><?php echo $theme['nickname'];?></span>
+                                <img style="margin: 0 0 10px 5px;" class="user-avatar" src="/imgs/avatar.png" alt="">
+                            </div>
+                        </td>
+						<td>
+                            <div class="date-theme" style="margin: 0; padding: 0;">
+                                <span><i style="margin-right: 5px;" class="fas fa-calendar-alt"></i> <?php echo $theme['date'];?></span>
+                            </div>
+                        </td>
 					</tr>
-					<tr>
-						<td>Название темы длинное</td>
-						<td>Пользователь: artevgen</td>
-						<td>Ответов в теме: 30</td>
-					</tr>
-					<tr>
-						<td>Название темы длинное</td>
-						<td>Пользователь: artevgen</td>
-						<td>Ответов в теме: 30</td>
-					</tr>
-					<tr>
-						<td>Название темы длинное</td>
-						<td>Пользователь: artevgen</td>
-						<td>Ответов в теме: 30</td>
-					</tr>
+                    <?php }?>
 				</tbody>
 			</table>
 		</div>

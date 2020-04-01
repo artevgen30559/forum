@@ -40,6 +40,8 @@ $('form').submit(function(e) {
             },
             success: function(data) {
                 $('.btn-auth').removeClass('btn-outline-primary');
+                $('.btn-auth').removeClass('btn-danger');
+                $('.btn-auth').removeClass('btn-success');
                 if (data == 'User not found') {
                     $('.btn-auth').html('Пользователь не найден');
                     $('.btn-auth').addClass('btn-danger');

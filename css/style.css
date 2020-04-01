@@ -37,6 +37,13 @@ body {
     margin-bottom: 5px;
 }
 
+table .theme-title {
+    overflow: hidden;
+    max-width: 300px;
+    font-size: 20px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
 
 .create-theme-form textarea,
 .create-theme-form input {
