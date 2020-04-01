@@ -56,4 +56,27 @@ $('form').submit(function(e) {
         });
     }
 
+    if ($(this).hasClass('create-theme-form')) {
+        $.ajax({
+            url: 'modules/' + action,
+            method: method,
+            dataType: 'JSON',
+            data: {
+                title: data[0]['value'],
+                body: data[1]['value'],
+            },
+            success: function(data) {
+                if (data == 'Theme created') {
+                    $('.btn-create-theme').removeClass('btn-secondary');
+                    $('.btn-create-theme').html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span><span class="sr-only"></span> Создаю тему');
+                    $('.btn-create-theme').addClass('btn-success');
+                    $('.btn-create-theme').css('pointer-events', 'none');
+                    setTimeout(function() {
+                        window.location.reload();
+                    }, 700);
+                }
+            }
+        });
+    }
+
 });

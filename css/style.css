@@ -18,6 +18,7 @@ body {
 .create-theme-form input {
     background-color: #5A6268;
     border: none;
+    color: lightgray;
 }
 
 .create-theme-form textarea:focus,

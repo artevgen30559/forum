@@ -132,7 +132,7 @@
 				</div>
 			</nav>
             <!-- Create theme form -->
-            <form class="create-theme-form" action="" method="GET" style="display: none;">
+            <form class="create-theme-form" action="createTheme.php" method="GET" style="display: none;">
                 <div class="row justify-content-center">
                     <div class="col-10">
                         <div class="form-group">
@@ -141,7 +141,7 @@
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="fas fa-heading"></i></div>
                                 </div>
-                                <input type="text" name="title" class="form-control" aria-describedby="emailHelp">
+                                <input type="text" name="title" class="form-control" aria-describedby="emailHelp" required>
                             </div>
                         </div>
                         <div class="form-group">
@@ -150,7 +150,7 @@
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="fas fa-paragraph"></i></div>
                                 </div>
-                                <textarea type="text" style="min-height: 150px;" class="form-control" name="body" rows="14"></textarea>
+                                <textarea type="text" style="min-height: 150px;" class="form-control" name="body" rows="14" required></textarea>
                             </div>
                         </div>
                         <div class="mybtn" style="text-align: center;">
