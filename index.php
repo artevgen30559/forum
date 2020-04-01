@@ -7,9 +7,8 @@
 <html lang="en" dir="ltr">
 	<head>
 		<meta charset="utf-8">
-		<title>Главная страница форума</title>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-		<link rel="stylesheet" href="css/style.css">
+		<title>Главная страница</title>
+        <?php include('layouts/head.php'); ?>
 	</head>
 	<body>
     <?php include('layouts/header.php'); ?>
@@ -34,7 +33,7 @@
 						<div class="tab-content" id="pills-tabContent">
 							<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 								<!-- Authorizate form -->
-								<form action="auth.php" method="POST" class="authorizate">
+								<form action="/modules/auth.php" method="POST" class="authorizate">
 									<div class="form-group">
 										<label>Введите логин:</label>
 										<div class="input-group">
@@ -60,7 +59,7 @@
 							</div>
 							<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
 								<!-- Register form -->
-								<form action="register.php" method="POST" class="register needs-validation">
+								<form action="/modules/register.php" method="POST" class="register needs-validation">
 									<div class="form-group">
 										<label>Введите псевдоним:</label>
 										<div class="input-group">
@@ -132,7 +131,7 @@
 				</div>
 			</nav>
             <!-- Create theme form -->
-            <form class="create-theme-form" action="createTheme.php" method="GET" style="display: none;">
+            <form class="create-theme-form" action="/modules/createTheme.php" method="GET" style="display: none;">
                 <div class="row justify-content-center">
                     <div class="col-10">
                         <div class="form-group">

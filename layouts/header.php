@@ -17,10 +17,10 @@
             <div class="dropdown">
                 <div class="profile-info dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="user-name"><?php echo $_SESSION['login']; ?></span>
-                    <img class="user-avatar" src="imgs/avatar.png" alt="">
+                    <img class="user-avatar" src="/imgs/avatar.png" alt="">
                 </div>
                 <div style="margin-top: 25px; left: -30px;" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="modules/logout.php">Выйти из аккаунта</a>
+                    <a class="dropdown-item" href="/modules/logout.php">Выйти из аккаунта</a>
                 </div>
             </div>
             <?php }?>

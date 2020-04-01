@@ -10,7 +10,7 @@ $('form').submit(function(e) {
 
     if ($(this).hasClass('register')) {
         $.ajax({
-            url: 'modules/' + action,
+            url: action,
             method: method,
             dataType: 'JSON',
             data: {
@@ -31,7 +31,7 @@ $('form').submit(function(e) {
     }
     if ($(this).hasClass('authorizate')) {
         $.ajax({
-            url: 'modules/' + action,
+            url: action,
             method: method,
             dataType: 'JSON',
             data: {
@@ -58,7 +58,7 @@ $('form').submit(function(e) {
 
     if ($(this).hasClass('create-theme-form')) {
         $.ajax({
-            url: 'modules/' + action,
+            url: action,
             method: method,
             dataType: 'JSON',
             data: {
@@ -66,13 +66,13 @@ $('form').submit(function(e) {
                 body: data[1]['value'],
             },
             success: function(data) {
-                if (data == 'Theme created') {
+                if (data['message'] == 'Theme created') {
                     $('.btn-create-theme').removeClass('btn-secondary');
                     $('.btn-create-theme').html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span><span class="sr-only"></span> Создаю тему');
                     $('.btn-create-theme').addClass('btn-success');
                     $('.btn-create-theme').css('pointer-events', 'none');
                     setTimeout(function() {
-                        window.location.reload();
+                        window.location.href = '/themepage.php?title=' + data['title'] + '&author=' + data['id_author'];
                     }, 700);
                 }
             }

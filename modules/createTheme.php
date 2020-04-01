@@ -22,6 +22,11 @@ $params = [
     'date' => $date
 ];
 
+// Response
 if ($stmt->execute($params)) {
-    echo json_encode('Theme created');
+    echo json_encode([
+        'title' => $title,
+        'id_author' => $id_author,
+        'message' => 'Theme created'
+    ]);
 }

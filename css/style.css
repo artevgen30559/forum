@@ -14,6 +14,30 @@ body {
     padding: 30px;
 }
 
+.date-theme {
+    color: #0069D9;
+}
+
+.author-theme,
+.date-theme {
+    display: inline-block;
+    border-radius: 10px;
+    height: 50px;
+    line-height: 45px;
+    padding: 0 30px;
+    margin-bottom: 20px;
+}
+
+.author-theme .author-name {
+    margin-right: 5px;
+}
+
+.author-theme img {
+    width: 25px;
+    margin-bottom: 5px;
+}
+
+
 .create-theme-form textarea,
 .create-theme-form input {
     background-color: #5A6268;
