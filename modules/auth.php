@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('db.php');
 
 $login = $_POST['login'];
@@ -13,6 +14,7 @@ $stmt->execute($params);
 $hashPassword = $stmt->fetchColumn();
 
 if(password_verify($password, $hashPassword)) {
+    $_SESSION['login'] = $login;
     echo json_encode('Auth success');
 } else {
     echo json_encode('User not found');

@@ -2,6 +2,23 @@
     outline: none !important;
 }
 
+nav.header .profile-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    color: gray;
+}
+
+nav.header .user-avatar {
+    width: 25px;
+}
+
+nav.header .user-name {
+    color: lightgray;
+    margin-right: 10px;
+}
+
 .spinner-border {
     margin-bottom: 3px;
 }
