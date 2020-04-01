@@ -124,13 +124,42 @@
             <h3 style="margin-bottom: 25px;">Темы форума <span class="badge badge-secondary"><i class="fas fa-star"></i></span></h3>
 			<nav class="navbar navbar-expand-lg navbar-light bg-dark" style="margin-bottom: 7px; border-radius: 7px;">
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<button class="btn btn-primary my-2 my-sm-2 mr-auto" type="submit">Создать тему <i style="margin-left: 10px;" class="fas fa-folder-plus"></i></button>
+					<button class="create-theme btn btn-primary my-2 my-sm-2 mr-auto" type="submit">Создать тему <i style="margin-left: 10px;" class="fas fa-folder-plus"></i></button>
 					<form class="form-inline my-lg-0">
 						<input class="form-control mr-sm-2" type="search" placeholder="Название темы" aria-label="Search">
 						<button class="btn btn-secondary my-2 my-sm-0" type="submit">Поиск</button>
 					</form>
 				</div>
 			</nav>
+            <!-- Create theme form -->
+            <form class="create-theme-form" action="" method="GET" style="display: none;">
+                <div class="row justify-content-center">
+                    <div class="col-10">
+                        <div class="form-group">
+                            <label>Заголовок темы</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><i class="fas fa-heading"></i></div>
+                                </div>
+                                <input type="text" name="title" class="form-control" aria-describedby="emailHelp">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Описание</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><i class="fas fa-paragraph"></i></div>
+                                </div>
+                                <textarea type="text" style="min-height: 150px;" class="form-control" name="body" rows="14"></textarea>
+                            </div>
+                        </div>
+                        <div class="mybtn" style="text-align: center;">
+                            <button type="submit" class="btn btn-primary btn btn-create-theme">Создать новую тему</button>
+                            <button type="submit" class="btn btn-secondary btn btn-cancel-create-theme">Отмена</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
 			<table class="table table-bordered table-striped table-borderless table-dark theme-list" style="border-radius: 7px;">
 				<thead>
 					<tr class="table-head">

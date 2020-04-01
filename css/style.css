@@ -2,6 +2,39 @@
     outline: none !important;
 }
 
+body {
+    margin-bottom: 300px;
+}
+
+.create-theme-form {
+    background-color: #343A40;
+    border: 1px solid rgba(48, 48, 50, 0.08);
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px 0px rgba(48, 48, 50, 0.1);
+    padding: 30px;
+}
+
+.create-theme-form textarea,
+.create-theme-form input {
+    background-color: #5A6268;
+    border: none;
+}
+
+.create-theme-form textarea:focus,
+.create-theme-form input:focus {
+    background-color: #5A6268;
+    border: none;
+    color: lightgray;
+}
+
+.create-theme-form {
+    color: lightgray;
+}
+
+.create-theme-form .input-group-text {
+    border: none;
+}
+
 nav.header .profile-info {
     display: flex;
     flex-direction: row;
