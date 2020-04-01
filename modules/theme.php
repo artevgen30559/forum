@@ -18,6 +18,7 @@ $stmt->execute($params);
 
 $result = $stmt->fetch();
 if (empty($result)) header('Location: /');
+
 $body = $result['body'];
 $nickname = $result['nickname'];
 $date = $result['date'];

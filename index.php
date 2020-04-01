@@ -145,13 +145,15 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label>Описание</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text"><i class="fas fa-paragraph"></i></div>
-                                </div>
-                                <textarea type="text" style="min-height: 150px;" class="form-control" name="body" rows="14" required></textarea>
-                            </div>
+                            <!-- Quil editor start -->
+                            <div id="body"></div>
+                            <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+                            <script>
+                              var quill = new Quill('#body', {
+                                theme: 'snow'
+                              });
+                            </script>
+                            <!-- Quil editor end -->
                         </div>
                         <div class="mybtn" style="text-align: center;">
                             <button type="submit" class="btn btn-primary btn btn-create-theme">Создать новую тему</button>
@@ -160,7 +162,6 @@
                     </div>
                 </div>
             </form>
-
 
 			<table class="table table-bordered table-striped table-borderless table-dark theme-list" style="border-radius: 7px;">
 				<thead>

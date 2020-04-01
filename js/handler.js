@@ -1,5 +1,3 @@
-
-
 $('form').submit(function(e) {
     e.preventDefault();
     if (!formValidation($(this))) return false;
@@ -59,22 +57,23 @@ $('form').submit(function(e) {
     }
 
     if ($(this).hasClass('create-theme-form')) {
+        var body = $('.ql-editor').html();
         $.ajax({
             url: action,
             method: method,
-            dataType: 'JSON',
             data: {
                 title: data[0]['value'],
-                body: data[1]['value'],
+                body: body,
             },
             success: function(data) {
-                if (data['message'] == 'Theme created') {
+                let response = JSON.parse(data);
+                if (response.message == 'Theme created') {
                     $('.btn-create-theme').removeClass('btn-secondary');
                     $('.btn-create-theme').html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span><span class="sr-only"></span> Создаю тему');
                     $('.btn-create-theme').addClass('btn-success');
                     $('.btn-create-theme').css('pointer-events', 'none');
                     setTimeout(function() {
-                        window.location.href = '/themepage.php?title=' + data['title'] + '&author=' + data['id_author'];
+                        window.location.href = '/themepage.php?title=' + response.title + '&author=' + response.id_author;
                     }, 700);
                 }
             }

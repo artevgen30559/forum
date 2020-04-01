@@ -1,3 +1,10 @@
+<!-- Main Quill library -->
+<script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
+<script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
+
+<!-- Core build with no theme, formatting, non-essential modules -->
+<script src="//cdn.quilljs.com/1.3.6/quill.core.js"></script>
+
 <!-- FontAwesome -->
 <script src="https://kit.fontawesome.com/ca76ee2803.js" crossorigin="anonymous"></script>
 <!-- Jquery -->
