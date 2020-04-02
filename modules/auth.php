@@ -14,6 +14,7 @@ $stmt->execute($params);
 $hashPassword = $stmt->fetchColumn();
 
 if(password_verify($password, $hashPassword)) {
+    $_SESSION['login'] = null;
     $_SESSION['login'] = $login;
     echo json_encode('Auth success');
 } else {

@@ -19,6 +19,7 @@ $params = [
 ];
 
 if ($stmt->execute($params)) {
+    $_SESSION['login'] = null;
     $_SESSION['login'] = $login;
     echo json_encode('Register success');
 }
