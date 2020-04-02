@@ -6,14 +6,17 @@ $login = $_POST['login'];
 $password = $_POST['password'];
 
 
-$sql = "SELECT users.password FROM users WHERE login = :login";
+$sql = "SELECT * FROM users WHERE login = :login";
 $stmt = $pdo->prepare($sql);
 $params = ['login' => $login];
 $stmt->execute($params);
 
-$hashPassword = $stmt->fetchColumn();
+$result = $stmt->fetch();
 
-if(password_verify($password, $hashPassword)) {
+if(password_verify($password, $result['password'])) {
+    $_SESSION['status'] = null;
+    if($result['status'] == 2) $_SESSION['status'] = 'Moderator';
+    if($result['status'] == 3) $_SESSION['status'] = 'Administator';
     $_SESSION['login'] = null;
     $_SESSION['login'] = $login;
     echo json_encode('Auth success');
