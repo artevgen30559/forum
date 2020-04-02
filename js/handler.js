@@ -73,7 +73,7 @@ $('form').submit(function(e) {
                     $('.btn-create-theme').addClass('btn-success');
                     $('.btn-create-theme').css('pointer-events', 'none');
                     setTimeout(function() {
-                        window.location.href = '/themepage.php?title=' + response.title + '&author=' + response.id_author;
+                        window.location.href = '/views/themepage.php?title=' + response.title + '&author=' + response.id_author;
                     }, 700);
                 }
             }
