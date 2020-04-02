@@ -103,5 +103,17 @@ $('form').submit(function(e) {
             }
         });
     }
+});
 
+
+$('.delete-theme').on('click', function(e) {
+    e.preventDefault();
+    let action = $(this).attr('action');
+    $.ajax({
+        url: action,
+        method: 'POST',
+        success: function() {
+            
+        }
+    });
 });

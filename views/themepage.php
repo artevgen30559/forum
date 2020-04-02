@@ -13,6 +13,10 @@
     <section class="theme-content">
         <div class="container">
             <div class="jumbotron">
+                <?php if ($_SESSION['status'] == 'Moderator' || $_SESSION['status'] == 'Administrator') {?>
+                <div class="delete-theme author-theme btn btn-danger" action="/modules/deleteTheme.php?id_theme=<?php echo $id_theme; ?>">
+                    <span class="author-name">Удалить тему</span>
+                </div> <?php }?>
                 <div class="author-theme btn btn-primary">
                     <span class="author-name"><?php echo $nickname; ?></span>
                     <img src="/imgs/avatar.png">
