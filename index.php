@@ -40,7 +40,7 @@
 											<div class="input-group-prepend">
          								 		<div class="input-group-text"><i class="fas fa-user"></i></div>
         									</div>
-											<input value="qqqqqqqqqqq" type="text" name="login" class="form-control" aria-describedby="emailHelp" required>
+											<input type="text" name="login" class="form-control" aria-describedby="emailHelp" required>
 										</div>
 									</div>
 									<div class="form-group">
@@ -49,7 +49,7 @@
 											<div class="input-group-prepend">
          								 		<div class="input-group-text"><i class="fas fa-key"></i></div>
         									</div>
-											<input value="qqqqqqqqqqq" type="password" name="password" class="form-control" aria-describedby="emailHelp" required>
+											<input type="password" name="password" class="form-control" aria-describedby="emailHelp" required>
 										</div>
 									</div>
 									<div class="mybtn">
@@ -66,7 +66,7 @@
 											<div class="input-group-prepend">
          								 		<div class="input-group-text"><i class="fas fa-signature"></i></div>
         									</div>
-											<input value="asdfasdfsfsdfd" type="text" name="nickname" class="form-control" aria-describedby="emailHelp" required>
+											<input type="text" name="nickname" class="form-control" aria-describedby="emailHelp" required>
 										</div>
 									</div>
 									<div class="form-group">
@@ -75,7 +75,7 @@
 											<div class="input-group-prepend">
          								 		<div class="input-group-text"><i class="fas fa-user"></i></div>
         									</div>
-											<input value="asdfasdfsfsdfd" type="text" name="login" class="form-control" aria-describedby="emailHelp">
+											<input type="text" name="login" class="form-control" aria-describedby="emailHelp">
 											<div class="valid-feedback valid-login">
 									        	Looks good!
 									      	</div>
@@ -90,7 +90,7 @@
 											<div class="input-group-prepend">
          								 		<div class="input-group-text"><i class="fas fa-key"></i></div>
         									</div>
-											<input value="asdfasdfsfsdfd" type="password" name="password" class="form-control" aria-describedby="emailHelp">
+											<input type="password" name="password" class="form-control" aria-describedby="emailHelp">
                                             <small id="emailHelp" class="form-text text-muted">Если логин УЖЕ существует и пароль верен, то вы авторизуетесь</small>
 											<div class="valid-feedback valid-pass">
 									        	Looks good!
