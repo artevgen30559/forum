@@ -173,7 +173,7 @@
 				</thead>
 				<tbody>
                     <?php foreach($themes as $theme) {?>
-					<tr data-href="<?php echo '/themepage.php' . '?title=' . $theme['title'] . '&author=' . $theme['id_author'];?>">
+					<tr data-href="<?php echo '/views/themepage.php' . '?title=' . $theme['title'] . '&author=' . $theme['id_author'];?>">
 						<td class="theme-title"><?php echo $theme['title'];?></td>
 						<td>
                             <div class="profile-info">

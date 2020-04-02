@@ -1,15 +1,15 @@
 <?php
-    require('modules/theme.php');
+    require('../modules/theme.php');
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
         <title>Тема <?php echo $title; ?></title>
-        <?php include('layouts/head.php'); ?>
+        <?php include('../layouts/head.php'); ?>
     </head>
     <body>
-    <?php require('layouts/header.php'); ?>
+    <?php require('../layouts/header.php'); ?>
     <section class="theme-content">
         <div class="container">
             <div class="jumbotron">
@@ -31,6 +31,6 @@
 
 
 
-    <?php require('layouts/footer.php'); ?>
+    <?php require('../layouts/footer.php'); ?>
     </body>
 </html>
