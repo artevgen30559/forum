@@ -80,4 +80,28 @@ $('form').submit(function(e) {
         });
     }
 
+    if($(this).hasClass('add-comment-form')) {
+        var body = $('.add-comment-form .ql-editor').html();
+        if (body.length <= 11) return false;
+        $.ajax({
+            url: action,
+            method: method,
+            data: {
+                body: body
+            },
+            success: function(data) {
+                let response = JSON.parse(data);
+                $('section.comments .comment-list').append(`
+                    <div class="card comment">
+                        <div class="card-body">
+                            <h5 class="card-title"><img src="/imgs/avatar.png"> Пользователь: `+ response.nickname +`</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Добавлен: `+ response.date +`</h6>
+                            <p class="card-text">` + body + `</p>
+                        </div>
+                    </div>
+                `);
+            }
+        });
+    }
+
 });

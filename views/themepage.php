@@ -26,7 +26,7 @@
             </div>
         </div>
     </section>
-
+    <?php require('comments.php'); ?>
 
 
 

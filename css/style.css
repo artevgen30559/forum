@@ -14,6 +14,32 @@ body {
     min-height: 250px;
 }
 
+section.comments .ql-toolbar {
+    background-color: #fff !important;
+}
+
+section.comments .card {
+    margin: 20px 0;
+}
+
+section.comments .ql-editor {
+    background-color: #fff !important;
+}
+
+.mybtn {
+    text-align: center;
+}
+
+.add-comment-form {
+    margin: 20px 0;
+
+}
+
+section.comments .add-comment i {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
 .create-theme-form {
     background-color: #343A40;
     border: 1px solid rgba(48, 48, 50, 0.08);
